@@ -16,6 +16,15 @@ reviewRouter
       })
       .catch((err) => next(err));
   }
-);
+  )
+  .post(cors.cors, (req, res, next) => {
+    Review.create(req.body)
+      .then((review) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(review);
+      })
+      .catch((err) => next(err));
+  });
 
 module.exports = reviewRouter;
