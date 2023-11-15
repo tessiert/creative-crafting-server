@@ -1,5 +1,6 @@
 const express = require('express');
 const Review = require('../models/review');
+const authenticate = require('../authenticate');
 const cors = require('./cors');
 
 const reviewRouter = express.Router();
@@ -17,7 +18,7 @@ reviewRouter
       .catch((err) => next(err));
   }
   )
-  .post(cors.cors, (req, res, next) => {
+  .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Review.create(req.body)
       .then((review) => {
         res.statusCode = 200;
