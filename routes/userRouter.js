@@ -25,12 +25,6 @@ userRouter.post('/signup', cors.corsWithOptions, (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.json({ err });
       } else {
-        // if (req.body.firstname) {
-        //   user.firstname = req.body.firstname;
-        // }
-        // if (req.body.lastname) {
-        //   user.lastname = req.body.lastname;
-        // }
         user.save((err) => {
           if (err) {
             res.statusCode = 500;
@@ -83,6 +77,7 @@ userRouter.post('/login', cors.corsWithOptions, (req, res, next) => {
         success: true,
         token: token,
         id: req.user._id,
+        firstname: req.user.firstname,
         status: 'You are successfully logged in'
       });
     });
