@@ -26,6 +26,16 @@ connect().catch((err) => functions.logger.log(err));
 
 const app = express();
 
+//http to https redirects
+app.enable('trust proxy');
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect('https://creativecrafting.dreamhosters.com' + req.url);
+  }
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
