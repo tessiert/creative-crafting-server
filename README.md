@@ -1,0 +1,4 @@
+# Creative Crafting - an ECommerce site for handmade items
+This repository contains the back end piece of an online storefront written in NodeJS and Express.  It is deployed on Google Cloud using their functions-framework and connects to a MongoDB Atlas database.  The database is modeled using Mongoose and stores information related to user accounts, user reviews, and order history. Authentication is handled using the passport-local, passport-jwt, and jsonwebtoken packages.  The code for the front end portion of the site is in my [creative_crafting_client](https://github.com/tessiert/creative_crafting_client) repository on GitHub.
+
+The site is hosted at https://creativecrafting.dreamhosters.com.
