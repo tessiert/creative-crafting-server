@@ -79,6 +79,7 @@ userRouter.post('/login', cors.corsWithOptions, (req, res, next) => {
         token: token,
         id: req.user._id,
         firstname: req.user.firstname,
+        username: req.user.username,
         status: 'You are successfully logged in'
       });
     });
