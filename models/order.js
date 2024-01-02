@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const orderSchema = new Schema(
   {
     username: { type: String, required: true },
-    order: { type: Schema.Types.Mixed, required: true },
+    orderData: { type: Schema.Types.Mixed, required: true },
     // payer: {
     //   firstName: { type: String, required: true},
     //   lastName: { type: String, required: true },

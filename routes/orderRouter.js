@@ -25,10 +25,7 @@ orderRouter
         res.setHeader('Content-Type', 'application/json');
         res.json(order);
       })
-      .catch((err) => {
-        console.log(req.body);
-        next(err)
-      });
+      .catch((err) => next(err));
   });
 
 module.exports = orderRouter;
