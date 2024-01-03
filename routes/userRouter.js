@@ -16,12 +16,12 @@ userRouter.post('/signup', cors.corsWithOptions, (req, res) => {
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       email: req.body.email,
-      username: req.body.username
+      username: req.body.username   // using email (username field required by register function)
     }),
     req.body.password,
     (err, user) => {
       if (err) {
-        console.log(err)
+        console.log('Server Error', err)
         res.statusCode = 500;
         res.setHeader('Content-Type', 'application/json');
         res.json({ err });
